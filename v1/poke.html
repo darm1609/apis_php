@@ -1,0 +1,35 @@
+<script>
+    fetch('https://jsonmock.hackerrank.com/api/stocks?date=5-January-2000')
+    .then(response => response.json())
+    .then(json => {
+        //Se imprime respuesta en console.log
+        json.data.forEach(el => {
+            debugger;
+        });
+        console.log(json);
+    })
+    .then(err => console.log('Solicitud fallo', err));
+
+    debugger;
+    apiR = requests.get("https://jsonmock.hackerrank.com/api/stocks?date=");
+
+
+    fetch('https://jsonmock.hackerrank.com/api/stocks?date=' + date)
+    .then(response => response.json())
+    .then(json => {
+        if (json.data.length) {
+            
+            json.data.forEach(el => {
+            console.log("Open:" + el.open); 
+            console.log("High:" + el.high);
+            console.log("Low:" + el.low);
+            console.log("Close:" + el.close);
+            });
+            
+        }
+        else
+            console.log('No Results Found');
+    })
+    .then(err => console.log('Fail response', err))
+
+</script>
